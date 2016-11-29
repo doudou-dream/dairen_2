@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head charset="utf-8">
+	<title>定时器</title>
+</head>
+<script>
+	window.onload =function () {
+		var bt1 = document.getElementById('bt1');
+		var bt2 = document.getElementById('bt2');
+		var time = null;//变量
+		bt1.onclick = function() {
+			time=setInterval( show, 1000);//开启计时器
+		}
+		bt2.onclick = function(){
+			clearInterval(time);//关闭计时器
+		}
+		function show() {
+			alert('a');
+		}
+		// setInterval(show, 1000);//一直循环执行间隔疫苗
+		// setTimeout(show, 1000);//延迟一秒在执行
+
+	};
+</script>
+<body>
+<input type="button" id="bt1" value="开启">
+<input type="button" id="bt2" value="关闭">
+</body>
+</html>

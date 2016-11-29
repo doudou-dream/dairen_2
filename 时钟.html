@@ -1,0 +1,56 @@
+<!-- 有兼容性问题在低版本的游览器有问题
+解决方案charAt(i)来去字符串就可以 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>时钟</title>
+	<style type="text/css" media="screen">
+		body{
+			margin: auto auto; 
+			background-color: #000;
+			font-size: 4em;
+			color: #fff;
+		}
+	</style>
+	<script>
+	window.onload = function () {
+		
+		// alert(oDate.getSeconds());//秒
+		// alert(oDate.getMinutes());//分
+		// alert(oDate.getHours());//时
+		var aImg = document.getElementsByTagName('img');
+		function isInt(stime){//补零方法
+			if(stime>10){
+				return ""+stime;
+			}
+				return "0"+stime;
+			
+		}
+
+		function tTime(){
+			var oDate = new Date();
+			var sTime = isInt(oDate.getHours())+isInt(oDate.getMinutes())+isInt(oDate.getSeconds());
+			// alert(sTime);
+			for (var i = 0; i < sTime.length; i++) {
+				aImg[i].src="image/"+sTime.charAt(i)+".png";
+			}
+		}
+		
+		setInterval(tTime,1000);
+		tTime();
+	};
+		
+
+	</script>
+</head>
+<body>
+<img src="image/0.png">
+<img src="image/0.png">
+:
+<img src="image/0.png">
+<img src="image/0.png">
+:
+<img src="image/0.png">
+<img src="image/0.png">
+</body>
+</html>
